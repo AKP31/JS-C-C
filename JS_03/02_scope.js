@@ -18,3 +18,49 @@ console.log(a);//500
 
 //global scope is different in browser environment and node environment.
 
+function one(){
+    const username = "Ankit"
+    function two(){
+        const website = "Youtube"
+        // console.log(username);
+        //Inside two, username can be assessed
+        
+    }
+    console.log(website);
+    //here we cannot access child scope
+
+    
+}
+//In nested function, the child function can access the parent variables but parent function cannot access child function variables.
+
+//scope with if else
+
+if(true){
+    const firstName = "Ankit"
+    if(firstName==="Ankit"){
+        const lastName = " Pandey"
+        console.log(firstName+lastName);
+    }
+    // console.log(lastName);
+    //Will give error.
+    //We cannot access
+    
+}
+// console.log(firstName);
+//Will give error.
+//We cannot access.
+
+//Interesting Concept:-Hoisting
+console.log(addOne(3));
+//this will not give error
+
+function addOne(num){
+    return num+1;
+}
+
+console.log(addTwo(4));
+//this will give error
+
+const res = function addTwo(num){
+    return num + 2;
+}
